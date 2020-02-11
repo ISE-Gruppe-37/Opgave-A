@@ -1,0 +1,22 @@
+# FURPS+
+
+- **Functionality**
+  - Kun ét skib ad gangen **skal kunne** passere.
+    - Dette SKAL være skibet fra *høj side*
+  - Ét skib ind **skal** ind, ét skib **skal** ud.
+- **Usability**
+  - Der **bør** være en indikation om hvorvidt portkammeret er ledigt.
+  - Der **kunne** være mulighed for, at se om der skibe på den modstatte side.
+  - Kaptajn el. lign **bør** kan signalere nødstop.
+- **Reliability**
+    - Ved nedtid **bør** systemet kunne startes igen på 24 timer.
+  - Nedetid < 5% af månedligt brug -
+    -  $24\text{h} \cdot 2\text{m} = 1440\text{h}$.
+    - $\frac{72\text{h}}{1440\text{h}}=5\%$
+- **Performance**
+  - Systemet **skal** kunne startes op på 72 timer.
+  - Et skib **bør** kunne passerer slusesystmet på **30** minutter.
+    - Et skib **skal** kunne passerer på 90 minutter.
+- **Supportability**
+  - Kameraene **bør** serviceres hvert 3. år for bedste effekt.
+  - Portkammeret **bør** drænes på 2 timer - muliggøre rengøring / service.
