@@ -3,16 +3,50 @@ title: "Slusekontrolsystem"
 author: [Adam Ryager Høj (201803767), Rasmus Kahr (201803491), Sigurd Skov Jensen (201804402)]
 date: "2020-02-17"
 keywords: [UCD, MoSCoW, FURPS]
-titlepage: TRUE
 ...
 
-- [Use case diagrammer](#use-case-diagrammer)
-  - [Beskrivelse af aktører](#beskrivelse-af-aktører)
-- [Fully Dressed use case](#fully-dressed-use-case)
-- [FURPS+ // MoSCoW](#furps--moscow)
-  - [Skal](#skal)
-  - [Bør](#bør)
-  - [Kunne](#kunne)
+# I2ISE
+
+<!-- <p style="text-align: center;"> -->
+
+**Besvarelse af obligatorisk opgave**
+
+**Opgave A**
+
+\[Specifikation af slusesystem\]
+
+**Afleveret:** \[17-02-2020\]
+
+**Afleveret af**:  Gruppe 37
+
+
+**Deltagere i afleveringen**
+
+  |Studienummer  | Navn                 |Studieretning |
+  |--------------| -------------------- |---------------|
+  |201804402     | Sigurd Skov Jensen   |I|
+  |201803491     | Rasmus Kahr          |E|
+  |201803767     | Adam Ryager Høj      |E|
+
+**Kontaktperson**
+
+  |Studienummer   |Navn   |E-mail  | Studieretning  |
+  |-------------- |------ |--------| ---------------|
+                  
+
+**Review af:** \[Indsæt gruppenummer, evt. ingen\]
+
+
+
+
+
+
+
+- [I2ISE](#i2ise)
+  - [Use case diagrammer](#use-case-diagrammer)
+    - [Beskrivelse af aktører](#beskrivelse-af-aktører)
+  - [Fully Dressed use case](#fully-dressed-use-case)
+  - [FURPS+ // MoSCoW](#furps--moscow)
 
 ## Use case diagrammer
 
@@ -126,30 +160,27 @@ titlepage: TRUE
 
 ## FURPS+ // MoSCoW
 
+Herunder er forsøgt at få de *ikke-funktionelle krav* prioriteret efter MoSCoW modellen.
 
+- Skal
+  - Kun ét skib ad gangen **skal kunne** passere.
+  - Ét skib ind **skal** ind, ét skib **skal** ud.
+  - Systemet **skal** kunne startes op på 72 timer.
+  - Et skib **skal** kunne passerer på 90 minutter.
 
-### Skal
-
-- Kun ét skib ad gangen **skal kunne** passere.
-- Ét skib ind **skal** ind, ét skib **skal** ud.
-- Systemet **skal** kunne startes op på 72 timer.
-- Et skib **skal** kunne passerer på 90 minutter.
-
-### Bør
-
-- Et skib **bør** kunne passerer slusesystmet på **30** minutter.
-- Der **bør** være en indikation om hvorvidt portkammeret er ledigt.
-- Ved nedtid **bør** systemet kunne startes igen på 24 timer.
-- Nedetid **bør** være < 5% ved 2mnd. brug baseret på flg. reliability udregning;
-  - $24\text{h} \cdot 2\text{m} = 1440\text{h}$.
-  - $\frac{72\text{h}}{1440\text{h}}=5\%$
-- Portkammeret **bør** drænes på 2 timer.
+- Bør
+  - Et skib **bør** kunne passerer slusesystmet på **30** minutter.
+  - Der **bør** være en indikation om hvorvidt portkammeret er ledigt.
+  - Ved nedtid **bør** systemet kunne startes igen på 24 timer.
+  - Nedetid **bør** være < 5% ved 2mnd. brug baseret på flg. reliability udregning;
+    - $24\text{h} \cdot 2\text{m} = 1440\text{h}$.
+    - $\frac{72\text{h}}{1440\text{h}}=5\%$
+  - Portkammeret **bør** drænes på 2 timer - muligøre service / rengøring.
  
-### Kunne  
-
-- Kameraene **kunne** serviceres hvert 3. år for bedste effekt.
-- Der **kunne** være mulighed for, at se om der skibe på den modstatte side.
-- Kaptajn el. lign **kunne** signalere nødstop.
+- Kunne  
+  - Kameraene **kunne** serviceres hvert 3. år for bedste effekt.
+  - Der **kunne** være mulighed for, at se om der skibe på den modstatte side.
+  - Kaptajn el. lign **kunne** signalere nødstop.
 
 
 
