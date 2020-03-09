@@ -1,6 +1,7 @@
 ---
 pdf_document:
   toc: true
+geometry: margin=2cm
 ---
 
 \pagebreak
