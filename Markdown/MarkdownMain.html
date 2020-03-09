@@ -1,0 +1,413 @@
+<h2 id="opgave-1---aktørkontekst-case-diagrammer">Opgave 1 - Aktørkontekst case diagrammer</h2>
+<figure>
+<img src="../UCD/ActorContext.png" alt="" /><figcaption>Actor Context diagram</figcaption>
+</figure>
+<p>Beskrivelse af aktører:</p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aktør</th>
+<th>Type</th>
+<th>Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Skib</td>
+<td>Prim.</td>
+<td>Skibet bruger systemet. Skibet sejler frem til slusesystemet for at passere fra høj til lav eller vice versa.</td>
+</tr>
+<tr class="even">
+<td>Kaptajn</td>
+<td>Prim.</td>
+<td>Kaptajnen sejler skibet og bruger dermed slusesystemet for at komme frem til sin destination.</td>
+</tr>
+<tr class="odd">
+<td>Kamera</td>
+<td>Sek.</td>
+<td>Kamera registrerer indkomne skibe på høj og lav side. Kamera holder øje med vandstanden i slusekammeret.</td>
+</tr>
+<tr class="even">
+<td>Sluseport</td>
+<td>Sek.</td>
+<td>Sluseportene åbner og lukker efter systemets behov for at skibe kan passere.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="opgave-2---use-cases">Opgave 2 - Use cases</h2>
+<p>Herunder ses usecase diagrammet for slusesystemet</p>
+<figure>
+<img src="../UCD/UseCases.png" alt="" /><figcaption>Use case diagram</figcaption>
+</figure>
+<h2 id="opgave-3---fully-dressed-use-case">Opgave 3 - Fully Dressed use case</h2>
+<table style="width:97%;">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Navn</strong> | **Passerer fra lav sid</th>
+<th>e**</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mål</strong> | Lade et skib anvende | slusesystemet til at bevæge sig | fra den lave side af | slusesystemet til den høje side</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Initiering</strong> | Et skib holder i | kamerafeltet “kamera lav”</td>
+<td>ndenfor</td>
+</tr>
+<tr class="odd">
+<td><strong>Aktører</strong> | Skibet</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Antal samtidige forekomster</strong> | af gangen)</td>
+<td>1 (Der er kun én mulig forekomst</td>
+</tr>
+<tr class="odd">
+<td><strong>Prækonditioner</strong> | Slusen er op | brug, og der er vand til skiben</td>
+<td>erationel, ikke i e</td>
+</tr>
+<tr class="even">
+<td><strong>Postkonditioner</strong> | Skibet befi | side og har passeret kamerafelt | “kamera høj”</td>
+<td>nder sig på den høje et</td>
+</tr>
+<tr class="odd">
+<td><strong>Hovedscenarie</strong> | 1. Et skib ho | kamerafeltet “kamera lav” | | 2. Slusen begynder at dræne<br />
+| _ <strong>EXT1</strong>: Et skib holder | indenfor kamerafeltet “kamera | høj”<em> | | 3. Indtil den når lav vandstand | som detekteret af “kamera | midt” | | 4. Sluseport lav åbner | | 5. Skibet sejler ind i | sluseelevatoren | | 6. Når den forlader kamerafelt | “kamera lav” og bevæger sig | ind i kamerafelt “kamera | midt” | | 7. Sluseport lav lukker | | 8. Sluseelevatoren fyldes med | vand | | 9. Indtil den når vandstand høj | som detekteret af “kamera | midt” | | 10. Sluseport høj åbner | | 11. Skibet sejler ud af | kamerafelt “kamera midt”, ind | i kamerafelt “kamera høj” | | 12. Skibet forlader kamerafelt | “kamera høj” | | 13. Sluseport høj lukker.<br />
+| </em> <strong>EXT2</strong>: Der er et andet | skib i kamerafelt “kamera | høj”_ | | 14. Sluseelevator drænes indtil | den når et midtpunkt, som | detekteret af “kamera midt”, | og afventer det næste input | fra kamerafelterne.</td>
+<td><p>lder indenfor</p>
+<p>,</p>
+<p>,</p></td>
+</tr>
+<tr class="even">
+<td><div class="line-block"><strong>EXT1</strong>: Et skib holder<br />
+indenfor kamerafeltet "kamera<br />
+høj"_<br />
+<br />
+1. Vent til **passerer høj<br />
+side** er afsluttet.<br />
+<br />
+2. Forsæt use case.<br />
+<br />
+<strong>EXT2</strong>: Der er et andet<br />
+skib i kamerafelt "kamera<br />
+høj"_<br />
+<br />
+1. Afslut use case.<br />
+<br />
+2. Forsæt use case **passerer<br />
+høj side.**</div></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="opgave-4---furps-moscow">Opgave 4 - FURPS+ // MoSCoW</h2>
+<p>Herunder er de ikke funktionelle-krav opstillet efter (F)URPS+ modellen.</p>
+<ul>
+<li><strong>U</strong>sability
+<ul>
+<li>Ét skib ind <strong>skal</strong> ind, ét skib <strong>skal</strong> ud.</li>
+<li>Der <strong>bør</strong> være en indikation om hvorvidt portkammeret er ledigt.</li>
+<li>Der <strong>kunne</strong> være mulighed for, at se om der skibe på den modstatte side.</li>
+</ul></li>
+<li><strong>R</strong>eliability
+<ul>
+<li>Systemet <strong>skal</strong> kunne startes op på 72 timer.</li>
+<li>Ved nedtid <strong>bør</strong> systemet kunne startes igen på 24 timer.</li>
+<li>Nedetid <strong>bør</strong> være &lt; 5% ved 2mnd. brug baseret på flg. reliability udregning;
+<ul>
+<li><span class="math inline">24h ⋅ 2m = 1440h</span>.</li>
+<li><span class="math inline">$\frac{72\text{h}}{1440\text{h}}=5\%$</span></li>
+</ul></li>
+<li>Portkammeret <strong>bør</strong> drænes på 2 timer - muligøre service / rengøring.</li>
+</ul></li>
+<li><strong>P</strong>erformance
+<ul>
+<li>Et skib <strong>bør</strong> kunne passerer slusesystmet på <strong>30</strong> minutter.</li>
+<li>Et skib <strong>skal</strong> kunne passerer på 90 minutter.</li>
+<li>Kun ét skib ad gangen <strong>skal kunne</strong> passere.</li>
+<li>Kaptajn el. lign <strong>kunne</strong> signalere nødstop.</li>
+</ul></li>
+<li><strong>S</strong>upportability
+<ul>
+<li>Kameraene <strong>kunne</strong> serviceres hvert 3. år for bedste effekt.</li>
+</ul></li>
+</ul>
+<h2 id="accepttest">Accepttest</h2>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Use case under test</strong></th>
+<th><strong>Passerer fra lav side</strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scenarie</strong></td>
+<td>Hovedscenarie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Prækondition</strong></td>
+<td>Sluseporten er operationel og klar til brug</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 31%" />
+<col style="width: 46%" />
+<col style="width: 14%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Step</strong></th>
+<th><strong>Handling</strong></th>
+<th><strong>Forventet observation/resultat</strong></th>
+<th><strong>Faktisk observation/resultat</strong></th>
+<th><strong>OK/FAIL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Sejl skibet frem til sluseporten fra lav side</td>
+<td>Kamera på lav side opfanger skibet og sluseporten begynder at dræne vand fra slusen</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Vent på dræning af vand i slusen</td>
+<td>Vandet i slusen drænes indtil vandstanden er samme som på lav side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Vent på at sluseporten på lav side åbner</td>
+<td>Sluseporten på lav side begynder at åbne når vandstanden er ens i slusen og på lav side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>Sejl skibet ind i slusen</td>
+<td>Kamera i slusen opfanger at skibet er inde i slusen og porten på lav side lukker</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td>Vent på at sluseporten på lav side lukker og vandet hæves til høj side</td>
+<td>Når sluseporten er lukket drænes vand ind fra høj side indtil vandstanden er ens i slusen og på høj side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td>Vent på at sluseporten på høj side åbner</td>
+<td>Sluseporten på høj side begynder at åbne når vandstanden er ens i slusen og på høj side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>7</strong></td>
+<td>Sejl skibet ud af sluseporten og ud af kamerafeltet på høj side</td>
+<td>Sluseporten på høj side lukkes og vandet drænes til neutral position</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Use case under test</strong></th>
+<th><strong>Passerer fra høj side</strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scenarie</strong></td>
+<td>Hovedscenarie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Prækondition</strong></td>
+<td>Sluseporten er operationel og klar til brug</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 33%" />
+<col style="width: 42%" />
+<col style="width: 15%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Step</strong></th>
+<th><strong>Handling</strong></th>
+<th><strong>Forventet observation/resultat</strong></th>
+<th><strong>Faktisk observation/resultat</strong></th>
+<th><strong>OK/FAIL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Sejl skibet frem til sluseporten fra høj side</td>
+<td>Kamera på høj side opfanger skibet og sluseporten begynder at fylde vand i slusen</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Vent på at vandet i slusen hæves</td>
+<td>Slusen fyldes med vand indtil vandstanden matcher høj side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Vent på at sluseporten på høj side åbner</td>
+<td>Sluseporten på høj side begynder at åbne når vandstanden i slusen matcher høj side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>Sejl skibet ind i slusen</td>
+<td>Kamera i slusen opfanger at skibet er inde i slusen og porten på høj side lukker</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td>Vent på at sluseporten på høj side lukker og vandet sænkes til lav side</td>
+<td>Når sluseporten er lukket sænkes vandstanden i slusen indtil vandstanden matcher lav side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td>Vent på at sluseporten på lav side åbner</td>
+<td>Sluseporten på lav side begynder at åbne når vandstanden i slusen matcher lav side</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>7</strong></td>
+<td>Sejl skibet ud af sluseporten og ud af kamerafeltet på lav side</td>
+<td>Sluseporten på lav side lukkes og vandet hæves til neutral position</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Use case under test</strong></th>
+<th><strong>Passerer fra lav side</strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scenarie</strong></td>
+<td>Extension: Samtidig ankomst af skibe ved både lav og høj side</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Prækondition</strong></td>
+<td>Sluseporten er operationel og klar til brug</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 32%" />
+<col style="width: 43%" />
+<col style="width: 15%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Step</strong></th>
+<th><strong>Handling</strong></th>
+<th><strong>Forventet observation/resultat</strong></th>
+<th><strong>Faktisk observation/resultat</strong></th>
+<th><strong>OK/FAIL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Sejl et skib frem til både sluseport på høj side og lav side samtidig</td>
+<td>Kamera på både høj og lav side opfanger et skib i deres kamerafelt</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Vent på systemet</td>
+<td>Systemet skal påbegynde use case <em>Passerer fra høj side</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Vent på gennemgang af use case <em>Passerer fra høj side</em></td>
+<td>Systemet skal påbegynde use case <em>Passerer fra lav side</em> når skibet fra høj side har passeret</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
